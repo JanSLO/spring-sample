@@ -1,0 +1,49 @@
+group 'com.janpomer'
+version '1.0-SNAPSHOT'
+
+buildscript {
+    ext {
+        spring_plugin_version = '2.0.1.RELEASE'
+    }
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:$spring_plugin_version")
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'war'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+sourceCompatibility = 10
+targetCompatibility = 10
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile("org.springframework.boot:spring-boot-starter-web")
+    compile("org.springframework.boot:spring-boot-starter-thymeleaf")
+    compile("org.springframework.boot:spring-boot-devtools")
+
+    testCompile("junit:junit")
+}
+
+bootRun {
+    addResources = true
+}
+
+jar {
+    baseName = 'spring-sample'
+    version =  '0.0.1'
+}
+
+
+war {
+    baseName = 'spring-sample'
+}
