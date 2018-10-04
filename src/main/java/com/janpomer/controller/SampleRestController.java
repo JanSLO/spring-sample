@@ -16,8 +16,8 @@ public class SampleRestController {
     }
 
 
-    @GetMapping(value = "/addOne/{value}")
-    int addOne(@PathVariable("value") int number) {
+    @GetMapping(value = "/addOne/{number}")
+    int addOne(@PathVariable(value = "number") int number) {
         return sampleService.addOne(number);
     }
 }
