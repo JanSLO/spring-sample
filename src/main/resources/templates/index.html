@@ -6,5 +6,22 @@
 </head>
 <body>
     <h1>Your test server is working! :)</h1>
+
+    <br>
+
+    Number: <input type="number" id="inputField"><br>
+    <button onclick="onClick()">Add One</button>
 </body>
+
+<script type="text/javascript">
+    function onClick() {
+        var number = document.getElementById("inputField").value
+
+        var xmlHttp = new XMLHttpRequest();
+        xmlHttp.open("GET", "/addOne/" + number, false); // false for synchronous request
+        xmlHttp.send(null);
+        document.getElementById("inputField").value = xmlHttp.responseText;
+    }
+</script>
+
 </html>
