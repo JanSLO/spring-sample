@@ -1,4 +1,4 @@
-package test.controller;
+package com.janpomer.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

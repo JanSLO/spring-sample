@@ -21,7 +21,6 @@ apply plugin: 'io.spring.dependency-management'
 
 sourceCompatibility = 10
 targetCompatibility = 10
-
 repositories {
     mavenCentral()
 }
@@ -32,10 +31,6 @@ dependencies {
     compile("org.springframework.boot:spring-boot-devtools")
 
     testCompile("junit:junit")
-}
-
-bootRun {
-    addResources = true
 }
 
 jar {
